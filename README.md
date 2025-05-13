@@ -2,7 +2,6 @@
 
 **MindVault** is a secure, local (offline) password manager with a graphical user interface, built using Python and PyQt5. It aims to provide a simple and secure way to store and manage your passwords.
 
-<!-- You can add a logo here if you have one -->
 <!-- <p align="center">
   <img src="https://i.ibb.co/1tpbx8Nq/app-icon.png" alt="MindVault Logo" width="200"/>
 </p> -->
@@ -26,16 +25,6 @@
     *   Select application font and size.
 *   **Portable Settings:** User settings (language, theme, font) are saved in `settings.json`.
 
-## 🖼️ Screenshots (Suggested)
-
-It's helpful to add screenshots of the program's interface here.
-
-<!--
-Example:
-![Login Screenshot](path/to/login_screenshot.png)
-![Main Window Screenshot](path/to/main_window_screenshot.png)
--->
-
 ## ⚙️ Requirements
 
 *   Python 3.7 or newer.
@@ -47,7 +36,7 @@ Example:
 
 1.  **Clone the repository (or download the files):**
     ```bash
-    git clone https://your-repository-url/MindVault.git # Replace with your actual repository URL
+    git clone https://github.com/imsara-py/MindVault.git
     cd MindVault
     ```
 
@@ -69,7 +58,7 @@ Example:
     *   If icons are not present in the `icons` folder, the program will create empty placeholder files. It's best to replace these with actual icons.
 
     ```bash
-    python your_script_name.py # Replace your_script_name.py with the actual Python script name
+    python main.py
     ```
 
 5.  **On first run:**
@@ -81,8 +70,8 @@ Example:
 ```
 MindVault/
 │
-├── main.py     # Main program script (replace with actual name)
-├── app_icon.png            # Main application icon (optional, but code looks for it)
+├── main.py     # Main program script
+├── app_icon.png            # Main application icon
 ├── settings.json           # Application settings file (auto-generated)
 │
 ├── data/
@@ -100,7 +89,6 @@ MindVault/
     ├── settings.png
     ├── lock.png
     └── exit.png
-    # (Preferably place real icons here; the program creates empty files if they don't exist)
 ```
 
 ## 🔐 Security Considerations
