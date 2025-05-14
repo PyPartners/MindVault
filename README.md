@@ -2,9 +2,9 @@
 
 **MindVault** is a secure, local (offline) password manager with a graphical user interface, built using Python and PyQt5. It aims to provide a simple and secure way to store and manage your passwords.
 
-<!-- <p align="center">
+<p align="center">
   <img src="https://i.ibb.co/1tpbx8Nq/app-icon.png" alt="MindVault Logo" width="200"/>
-</p> -->
+</p>
 
 ## ✨ Features
 
