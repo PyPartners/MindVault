@@ -120,3 +120,6 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 ## 📜 License
 
 This project is currently unlicensed.
+
+## Contributors
+- [@imsara-py](https://github.com/imsara-py) 
