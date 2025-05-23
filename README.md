@@ -1,125 +1,166 @@
 # MindVault 🔑
 
-**MindVault** is a secure, local (offline) password manager with a graphical user interface, built using Python and PyQt5. It aims to provide a simple and secure way to store and manage your passwords.
+**MindVault** is a secure, offline-first password manager with a graphical user interface built using Python and PyQt5. It aims to provide a clean, modern, and safe way to store and manage your passwords locally—without any internet dependencies.
 
 <p align="center">
   <img src="https://i.ibb.co/1tpbx8Nq/app-icon.png" alt="MindVault Logo" width="200"/>
 </p>
 
+---
+
 ## ✨ Features
 
-*   **Strong Encryption:** All your data is encrypted using AES-256 GCM. The encryption key is derived from your master password using PBKDF2HMAC (SHA256) with a high iteration count (`390000`) and a unique salt.
-*   **Local Storage:** All your data is stored locally in an encrypted file (`data/vault.enc`). Nothing is sent over the internet.
-*   **User-Friendly GUI:** Built with PyQt5, supporting light and dark themes.
-*   **Account Management:**
-    *   Add, edit, and delete accounts (site, username, password, notes).
-    *   Show or hide the password in the input form.
-*   **Quick Search:** Easily filter accounts based on site name, username, or notes.
-*   **Password Copying:** Copy the selected password to the clipboard with a single click.
-*   **Single Master Password:** One master password unlocks your entire password vault.
-    *   Password strength indicator during creation.
-*   **Vault Locking:** Ability to lock the vault, requiring re-entry of the master password.
-*   **Multi-language Support:** Currently supports English and Arabic (with the possibility to add other languages via JSON files).
-*   **Appearance Customization:**
-    *   Themes (light/dark).
-    *   Select application font and size.
-*   **Portable Settings:** User settings (language, theme, font) are saved in `settings.json`.
+- 🔐 **Strong Encryption:** Uses AES-256 GCM for encryption. The encryption key is derived from your master password using PBKDF2HMAC with SHA256 and 390,000 iterations.
+- 💾 **Local Storage:** Your encrypted data is stored in `data/vault.enc`. Nothing leaves your device.
+- 🖼️ **User-Friendly GUI:** Clean and intuitive interface powered by PyQt5 with support for light and dark modes.
+- 📁 **Account Management:**
+  - Add, edit, and delete entries (site, username, password, notes).
+  - Toggle visibility of the password field.
+- 🔍 **Quick Search:** Instantly filter accounts by website, username, or notes.
+- 📋 **Clipboard Copy:** One-click copy of password fields.
+- 🔑 **Master Password:** One strong password unlocks the entire vault.
+  - Password strength indicator included during creation.
+- 🔒 **Auto Lock:** Vault automatically locks after inactivity.
+- ⚠️ **Duplicate Detection:** Notifies you if you're reusing the same password.
+- 🔐 **Password Generator:** Built-in generator for strong, customizable passwords.
+- 📈 **Strength Indicator:** Dynamic password strength meter.
+- 📦 **Backup & Restore:** Easily create and restore backups of your vault.
+- 🔐 **2FA (TOTP) Support:** Add a second layer of authentication with time-based one-time passwords.
+- 🌍 **Multi-language:** Supports English and Arabic. Additional languages can be added via JSON files.
+- 🎨 **Appearance Settings:** Choose from light/dark themes, select font and size.
+- ⚙️ **Portable Settings:** Stored in `settings.json`.
+
+---
 
 ## ⚙️ Requirements
 
-*   Python 3.7 or newer.
-*   The following libraries (can be installed via `pip`):
-    *   `PyQt5`
-    *   `cryptography`
+- Python 3.7 or newer
+- Install dependencies with:
+
+```bash
+pip install PyQt5 cryptography pyotp qrcode
+````
+
+---
 
 ## 🚀 Installation and Running
 
-1.  **Clone the repository (or download the files):**
-    ```bash
-    git clone https://github.com/imsara-py/MindVault.git
-    cd MindVault
-    ```
+1. **Clone the repository:**
 
-2.  **(Optional but recommended) Create a virtual environment:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Linux/macOS
-    # venv\Scripts\activate    # On Windows
-    ```
+```bash
+git clone https://github.com/PyPartners/MindVault.git
+cd MindVault
+```
 
-3.  **Install dependencies:**
-    ```bash
-    pip install PyQt5 cryptography
-    ```
+2. **(Optional) Create a virtual environment:**
 
-4.  **Run the program:**
-    The program will create necessary directories (`data`, `lang`, `icons`) and files (default language files, initial settings file, dummy icons if they don't exist) on its first run.
-    *   Ensure you have an `app_icon.png` file in the root directory or modify the path in the code if needed.
-    *   If icons are not present in the `icons` folder, the program will create empty placeholder files. It's best to replace these with actual icons.
+```bash
+python -m venv venv
+source venv/bin/activate    # On Linux/macOS
+# venv\Scripts\activate     # On Windows
+```
 
-    ```bash
-    python main.py
-    ```
+3. **Run the application:**
 
-5.  **On first run:**
-    *   You will be prompted to create a **Master Password**. This password is **extremely important**. If you forget it, you will not be able to access your stored data. **There is no way to recover it.**
-    *   After creating the master password, the encrypted vault file will be created.
+```bash
+python main.py
+```
 
-## 📁 File and Folder Structure
+4. **On first launch:**
+
+   * You'll be prompted to create a **master password**.
+   * The program will generate required folders (`data/`, `lang/`, `icons/`) and default files if missing.
+
+---
+
+## 📁 Project Structure
 
 ```
 MindVault/
 │
-├── main.py     # Main program script
-├── app_icon.png            # Main application icon
-├── settings.json           # Application settings file (auto-generated)
+├── main.py                # Entry point
+├── app_icon.png           # Application icon
+├── constants.py
+├── settings.json          # User preferences (auto-generated)
+├── THANKS.txt
+├── requirements.txt
+├── __init__.py
 │
-├── data/
-│   └── vault.enc           # Encrypted vault file (auto-generated)
+├── core/                  # Core logic and utilities
+│   ├── crypto.py
+│   ├── settings.py
+│   ├── translation.py
+│   └── utils.py
 │
-├── lang/                     # Translation files directory (auto-generated)
-│   ├── en.json             # English translation file (auto-generated)
-│   └── ar.json             # Arabic translation file (auto-generated)
+├── features/              # Optional functionality
+│   ├── auto_lock.py
+│   ├── backup_restore.py
+│   ├── duplicate_checker.py
+│   ├── password_generator.py
+│   ├── strength_indicator.py
+│   └── two_factor_auth.py
 │
-└── icons/                    # Directory for UI icons (auto-generated)
-    ├── add.png
-    ├── edit.png
-    ├── delete.png
-    ├── copy.png
-    ├── settings.png
-    ├── lock.png
-    └── exit.png
+├── icons/                 # UI Icons
+│   ├── add.png
+│   ├── edit.png
+│   ├── delete.png
+│   ├── copy.png
+│   ├── settings.png
+│   ├── lock.png
+│   ├── exit.png
+│   ├── app_icon.png
+│   ├── backup.png
+│   ├── restore.png
+│   ├── check.png
+│   └── check_dark.png
+│
+├── lang/                  # Language JSON files
+│   ├── en.json
+│   └── ar.json
+│
+├── ui/                    # GUI code
+│   ├── main_window.py
+│   ├── dialogs.py
+│   └── styles.py
+│
+└── project_map/           # Documentation and architecture
+    ├── MindVault.md
+    ├── mindvault_architecture.png
+    └── mindvault_architecture_english.png
 ```
+
+---
 
 ## 🔐 Security Considerations
 
-*   **Master Password:** It's the key to everything. Choose a strong, unique password and don't share it with anyone. Forgetting it means permanently losing access to all your data.
-*   **Local Storage:** Your data never leaves your device. This means you are responsible for the security of your device and the vault file (`vault.enc`).
-*   **Backups:** It is strongly recommended to regularly back up your `vault.enc` file and `settings.json` file to a secure location (e.g., an encrypted external drive).
-*   **Cryptography Library:** The program relies on the well-tested and trusted `cryptography` library for handling encryption operations.
+* **Master Password:** It is *never* stored. It's used to derive the encryption key. Losing it = losing access forever.
+* **Vault File:** Always stored locally, encrypted. You control your data.
+* **Backups:** Create secure, encrypted backups of `vault.enc` and `settings.json`.
+* **Clipboard:** Passwords copied to clipboard are not auto-cleared *yet* (feature in progress).
 
-## 📝 To-Do List / Potential Future Features
+---
 
-*   [ ] Strong password generator.
-*   [ ] Auto-lock vault after a period of inactivity.
-*   [ ] Option to import/export data (in an encrypted format or protected CSV/JSON).
-*   [ ] Support for more themes or full color customization.
-*   [ ] More detailed password strength indicator when adding/editing an account.
-*   [ ] Automatically clear clipboard after a certain time when a password is copied (the code has a starting point for this feature).
+## 📌 To-Do / Planned Features
+
+* [x] Strong password generator
+* [x] Auto-lock on inactivity
+* [x] Duplicate password warnings
+* [x] Password strength meter
+* [x] Vault backup and restore
+* [x] 2FA (TOTP) authentication
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/AmazingFeature`
+3. Commit your changes: `git commit -m 'Add AmazingFeature'`
+4. Push to the branch: `git push origin feature/AmazingFeature`
+5. Submit a Pull Request
 
-1.  Fork the repository.
-2.  Create a new branch for your feature (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push your changes to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
+---
 
 ## 📜 License
 
-This project is currently unlicensed.
-
-## Contributors
-- [@imsara-py](https://github.com/imsara-py) 
+This project is currently **unlicensed**.
