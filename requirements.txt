@@ -1,7 +1,4 @@
-# MindVault Application Requirements
-
-# Core GUI Framework
 PyQt5
-
-# Cryptography Library for encryption/decryption
 cryptography
+pyotp
+qrcode

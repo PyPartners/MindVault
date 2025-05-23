@@ -1,0 +1,47 @@
+🛠️ نهاية مرحلة، وبداية أخرى...
+
+تم تطوير MindVault بشغف ومحبة من قبلنا، نحن: سارة و محمد، تحت راية منظمتنا المفتوحة المصدر PyPartners.  
+بدأنا هذا المشروع برؤية واضحة: تقديم أدوات مفتوحة المصدر تساعد الناس على حماية بياناتهم وتنظيم حياتهم الرقمية.  
+وكانت النسخة الأولى 1.0 بداية هذه الرحلة، والآن… نصل إلى محطتها الأخيرة: الإصدار 2.0 ✨
+
+هذا الإصدار يمثل ختام رحلتنا مع MindVault، ليس لأنه انتهى، بل لأنه أصبح ناضجًا بما يكفي ليستمر من خلالكم.  
+قررنا ترك تطوير البرنامج للمجتمع البرمجي الرائع من حولنا، حتى نتمكن من التركيز على مشاريع أخرى قد تكون أكثر أهمية في الوقت الحالي.
+
+📚 وحرصًا منا على تسهيل عملية التطوير، قمنا بتوفير خارطة شاملة للبرنامج توضح بنية المجلدات والملفات، وما يحتويه كل ملف من دوال ووظائف. هذه الخارطة ستكون متوفرة ضمن مجلد باسم `project_map` داخل المشروع. هذه الخارطة ستُساعد أي مطور على فهم الكود بسرعة والبدء بتحديثه أو إضافة ميزات جديدة بسهولة.
+
+🙏 كما لا يفوتنا أن نتوجه بجزيل الشكر والامتنان إلى موقع Harmash (https://harmash.com/) والمشرف عليه الأستاذ محمد هرموش، الذي كان وما زال مصدرًا غنيًا وملهمًا للمطورين العرب، وساهم بشكل غير مباشر في إثراء معرفتنا البرمجية.
+
+🌐 موقعنا الرسمي: https://pypartners.org/  
+🐙 حسابنا على GitHub: https://github.com/PyPartners
+
+🧠🔐 نأمل أن تجدوا في MindVault ما يفيدكم، ونشجّع كل مبرمج ومهتم بالمصادر المفتوحة على أخذ هذا المشروع إلى آفاق جديدة.
+
+شكرًا لكم على استخدامكم، دعمكم، وكونكم جزءًا من هذه الرحلة ❤️  
+
+مع خالص الامتنان،  
+فريق PyPartners
+
+-----------------------------------------------------------------------
+
+🛠️ An End of a Chapter, and the Beginning of Another...
+
+MindVault was passionately crafted by us — Sara and [Your Name] — under our open-source organization, PyPartners.  
+We started this project with a clear vision: to provide open-source tools that help people protect their data and organize their digital lives.  
+Version 1.0 marked the beginning of that journey, and now… we proudly release its final form: version 2.0 ✨
+
+This release marks the end of our active development of MindVault — not because it’s finished, but because it has matured enough to grow through you.  
+We've decided to leave its future in the hands of the amazing open-source community, while we focus on other, potentially more impactful, projects.
+
+📚 To support future contributors, we’ve prepared a comprehensive project map outlining the folder structure, file responsibilities, and functions inside each component. This map will be available inside the project under the folder named `project_map`. This roadmap will help developers quickly understand the codebase and confidently contribute.
+
+🙏 We would also like to express our deep gratitude to Harmash (https://harmash.com/) and its creator, Mr. Mohammad Harmoush, whose rich and inspiring Arabic programming content has contributed — directly and indirectly — to our learning journey.
+
+🌐 Our official website: https://pypartners.org/  
+🐙 Our GitHub: https://github.com/PyPartners
+
+🧠🔐 We hope you find MindVault useful, and we wholeheartedly encourage every developer and open-source enthusiast to take it to new heights.
+
+Thank you for using it, supporting us, and being a part of this journey ❤️  
+
+With deep gratitude,  
+The PyPartners Team
